@@ -34,6 +34,17 @@ dependencyManagement {
 	}
 }
 
+configurations.all {
+	resolutionStrategy.eachDependency {
+		if (requested.group == "ch.qos.logback") {
+			useVersion("[1.2.10, 1.3)")
+			because("Fixes critical logback vulnerability in 1.2.8+, last version now 1.2.10. " +
+					"Limited to 1.3 because of a legacy alpha 1.3 version.")
+		}
+	}
+	exclude(group = "org.apache.logging.log4j")
+}
+
 tasks.withType<KotlinCompile> {
 	kotlinOptions {
 		freeCompilerArgs = listOf("-Xjsr305=strict")
