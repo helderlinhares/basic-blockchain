@@ -1,7 +1,8 @@
 package me.hl.blockchain.service
 
-import me.hl.blockchain.domain.Block
-import me.hl.blockchain.domain.Transaction
+import me.hl.blockchain.domain.block.Block
+import me.hl.blockchain.domain.chain.ChainService
+import me.hl.blockchain.domain.transaction.Transaction
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 import org.junit.runner.RunWith

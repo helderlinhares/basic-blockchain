@@ -2,10 +2,10 @@ package me.hl.blockchain
 
 import me.hl.blockchain.Commons.VALID_PRIVATE_KEY
 import me.hl.blockchain.Commons.VALID_PUBLIC_KEY
-import me.hl.blockchain.domain.Transaction
-import me.hl.blockchain.exception.Error
-import me.hl.blockchain.exception.ErrorCode
-import me.hl.blockchain.exception.ErrorResponse
+import me.hl.blockchain.domain.transaction.Transaction
+import me.hl.blockchain.shared.Error
+import me.hl.blockchain.shared.ErrorCode
+import me.hl.blockchain.shared.ErrorResponse
 import me.hl.blockchain.rest.BlockResponse
 import me.hl.blockchain.rest.WalletResponse
 import org.springframework.context.MessageSource

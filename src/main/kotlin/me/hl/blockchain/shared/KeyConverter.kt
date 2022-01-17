@@ -1,7 +1,5 @@
-package me.hl.blockchain.util
+package me.hl.blockchain.shared
 
-import me.hl.blockchain.exception.ErrorCode
-import me.hl.blockchain.exception.InvalidKeyException
 import org.springframework.util.Base64Utils
 import java.security.Key
 import java.security.KeyFactory
@@ -12,7 +10,7 @@ import java.security.spec.PKCS8EncodedKeySpec
 import java.security.spec.RSAPublicKeySpec
 import java.security.spec.X509EncodedKeySpec
 
-object Converter {
+object KeyConverter {
 
     fun String.toPrivateKey(): PrivateKey =
         try {

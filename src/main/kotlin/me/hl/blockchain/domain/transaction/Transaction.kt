@@ -1,4 +1,4 @@
-package me.hl.blockchain.domain
+package me.hl.blockchain.domain.transaction
 
 data class Transaction(
     var amount: Long,

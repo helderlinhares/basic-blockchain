@@ -12,14 +12,14 @@ import me.hl.blockchain.buildInvalidRequestHeaderResponse
 import me.hl.blockchain.buildValidBlockchainResponse
 import me.hl.blockchain.buildValidTransactionResponse
 import me.hl.blockchain.buildValidWalletResponse
-import me.hl.blockchain.exception.ErrorCode
-import me.hl.blockchain.exception.InvalidAmountException
-import me.hl.blockchain.exception.InvalidKeyException
-import me.hl.blockchain.service.ChainService
-import me.hl.blockchain.service.TransactionService
-import me.hl.blockchain.service.WalletService
-import me.hl.blockchain.util.Converter.toPrivateKey
-import me.hl.blockchain.util.Converter.toPublicKey
+import me.hl.blockchain.shared.ErrorCode
+import me.hl.blockchain.shared.InvalidAmountException
+import me.hl.blockchain.shared.InvalidKeyException
+import me.hl.blockchain.domain.chain.ChainService
+import me.hl.blockchain.domain.transaction.TransactionService
+import me.hl.blockchain.domain.wallet.WalletService
+import me.hl.blockchain.shared.KeyConverter.toPrivateKey
+import me.hl.blockchain.shared.KeyConverter.toPublicKey
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.BDDMockito
@@ -36,7 +36,7 @@ import org.springframework.test.web.servlet.post
 @RunWith(SpringRunner::class)
 @SpringBootTest
 @AutoConfigureMockMvc
-class BlockChainControllerTest {
+class BlockchainControllerTest {
     @MockBean
     private lateinit var chainService: ChainService
 

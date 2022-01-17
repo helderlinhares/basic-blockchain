@@ -4,10 +4,12 @@ import me.hl.blockchain.Commons
 import me.hl.blockchain.Commons.VALID_PRIVATE_KEY
 import me.hl.blockchain.Commons.VALID_PUBLIC_KEY
 import me.hl.blockchain.buildValidTransactionResponse
-import me.hl.blockchain.exception.InvalidAmountException
-import me.hl.blockchain.exception.InvalidKeyException
-import me.hl.blockchain.util.Converter.toPrivateKey
-import me.hl.blockchain.util.Converter.toPublicKey
+import me.hl.blockchain.domain.chain.ChainService
+import me.hl.blockchain.domain.transaction.TransactionService
+import me.hl.blockchain.shared.InvalidAmountException
+import me.hl.blockchain.shared.InvalidKeyException
+import me.hl.blockchain.shared.KeyConverter.toPrivateKey
+import me.hl.blockchain.shared.KeyConverter.toPublicKey
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 import org.junit.runner.RunWith

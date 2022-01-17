@@ -4,7 +4,8 @@ import me.hl.blockchain.Commons.INITIAL_BALANCE
 import me.hl.blockchain.Commons.INVALID_PRIVATE_KEY
 import me.hl.blockchain.Commons.VALID_PRIVATE_KEY
 import me.hl.blockchain.buildValidWalletResponse
-import me.hl.blockchain.exception.InvalidKeyException
+import me.hl.blockchain.domain.wallet.WalletService
+import me.hl.blockchain.shared.InvalidKeyException
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 import org.junit.runner.RunWith

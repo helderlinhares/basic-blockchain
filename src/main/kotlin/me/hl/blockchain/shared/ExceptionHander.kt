@@ -1,4 +1,4 @@
-package me.hl.blockchain.exception
+package me.hl.blockchain.shared
 
 import org.slf4j.LoggerFactory
 import org.springframework.context.MessageSource

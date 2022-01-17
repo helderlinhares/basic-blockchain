@@ -1,10 +1,10 @@
 package me.hl.blockchain.rest
 
-import me.hl.blockchain.service.ChainService
-import me.hl.blockchain.service.TransactionService
-import me.hl.blockchain.service.WalletService
-import me.hl.blockchain.util.Converter.toPrivateKey
-import me.hl.blockchain.util.Converter.toPublicKey
+import me.hl.blockchain.domain.chain.ChainService
+import me.hl.blockchain.domain.transaction.TransactionService
+import me.hl.blockchain.domain.wallet.WalletService
+import me.hl.blockchain.shared.KeyConverter.toPrivateKey
+import me.hl.blockchain.shared.KeyConverter.toPublicKey
 import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType
 import org.springframework.web.bind.annotation.GetMapping
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/blockchain", produces = [MediaType.APPLICATION_JSON_VALUE])
-class BlockChainController(
+class BlockchainController(
     private val walletService: WalletService,
     private val transactionService: TransactionService,
     private val chainService: ChainService

@@ -1,6 +1,7 @@
-package me.hl.blockchain.domain
+package me.hl.blockchain.domain.block
 
-import me.hl.blockchain.util.Converter.toHex
+import me.hl.blockchain.domain.transaction.Transaction
+import me.hl.blockchain.shared.KeyConverter.toHex
 import java.security.MessageDigest
 import java.util.Calendar
 

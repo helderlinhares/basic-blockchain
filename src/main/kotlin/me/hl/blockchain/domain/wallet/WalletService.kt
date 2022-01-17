@@ -1,10 +1,10 @@
-package me.hl.blockchain.service
+package me.hl.blockchain.domain.wallet
 
-import me.hl.blockchain.domain.Wallet
+import me.hl.blockchain.domain.chain.ChainService
 import me.hl.blockchain.rest.WalletResponse
-import me.hl.blockchain.util.Converter.recoveryPublicKey
-import me.hl.blockchain.util.Converter.toPem
-import me.hl.blockchain.util.Converter.toPrivateKey
+import me.hl.blockchain.shared.KeyConverter.recoveryPublicKey
+import me.hl.blockchain.shared.KeyConverter.toPem
+import me.hl.blockchain.shared.KeyConverter.toPrivateKey
 import org.springframework.stereotype.Service
 import java.security.KeyPair
 import java.security.KeyPairGenerator

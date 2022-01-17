@@ -1,4 +1,4 @@
-package me.hl.blockchain.exception
+package me.hl.blockchain.shared
 
 data class Error(val code: String?, val message: String?)
 data class ErrorResponse(val errors: List<Error>)

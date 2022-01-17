@@ -1,5 +1,7 @@
-package me.hl.blockchain.domain
+package me.hl.blockchain.domain.chain
 
+import me.hl.blockchain.domain.block.Block
+import me.hl.blockchain.domain.transaction.Transaction
 import org.springframework.stereotype.Component
 
 @Component

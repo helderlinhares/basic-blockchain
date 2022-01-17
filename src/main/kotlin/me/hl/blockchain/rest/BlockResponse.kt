@@ -1,6 +1,6 @@
 package me.hl.blockchain.rest
 
-import me.hl.blockchain.domain.Transaction
+import me.hl.blockchain.domain.transaction.Transaction
 
 data class BlockResponse(
     var id: String,

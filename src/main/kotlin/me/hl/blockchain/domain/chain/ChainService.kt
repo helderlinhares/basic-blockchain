@@ -1,10 +1,9 @@
-package me.hl.blockchain.service
+package me.hl.blockchain.domain.chain
 
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
-import me.hl.blockchain.domain.Block
-import me.hl.blockchain.domain.Chain
+import me.hl.blockchain.domain.block.Block
 import me.hl.blockchain.rest.BlockResponse
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service
