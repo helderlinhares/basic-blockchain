@@ -162,9 +162,3 @@ To import the collection on Postman:
 
 This project was implemented as a personal blockchain study, doesn't relate with other existing blockchains, and should not be used as a final solution.
 
-
-## Donations
-
-If this project helped you, and you are feeling generous, here is a BITCOIN Wallet Address:
-
-`bc1q5lfafzymgfjdakgpl09dk70vlh3axapta0sgll`
