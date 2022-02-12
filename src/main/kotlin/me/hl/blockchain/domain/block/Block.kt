@@ -6,7 +6,6 @@ import java.security.MessageDigest
 import java.util.Calendar
 
 data class Block(
-    var previousBlockHash: String?,
     var transaction: Transaction,
     var time: Long = Calendar.getInstance().timeInMillis
 ) {

@@ -28,7 +28,7 @@ class TransactionService(val chainService: ChainService) {
                 chainService.run {
                     mine(transaction.amount)
                     addBlockOnChain(
-                        Block(chainService.getLastBlockHash(), transaction)
+                        Block(transaction)
                     )
                 }
             }
@@ -96,9 +96,9 @@ class TransactionService(val chainService: ChainService) {
         val isValidCreditSignature = isValidSignature(creditTransaction, senderPublicKey, creditSignature)
 
         if (isValidDebtSignature && isValidCreditSignature) {
-            val debitBlock = Block(chainService.getLastBlockHash(), debitTransaction)
+            val debitBlock = Block(debitTransaction)
             chainService.addBlockOnChain(debitBlock)
-            val newCreditBlock = Block(chainService.getLastBlockHash(), creditTransaction)
+            val newCreditBlock = Block(creditTransaction)
             chainService.addBlockOnChain(newCreditBlock)
         } else
             throw InvalidKeyException(ErrorCode.INVALID_KEY)

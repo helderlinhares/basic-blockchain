@@ -2,14 +2,14 @@ package me.hl.blockchain
 
 import me.hl.blockchain.Commons.VALID_PRIVATE_KEY
 import me.hl.blockchain.Commons.VALID_PUBLIC_KEY
+import me.hl.blockchain.domain.block.Block
 import me.hl.blockchain.domain.transaction.Transaction
+import me.hl.blockchain.rest.WalletResponse
 import me.hl.blockchain.shared.Error
 import me.hl.blockchain.shared.ErrorCode
 import me.hl.blockchain.shared.ErrorResponse
-import me.hl.blockchain.rest.BlockResponse
-import me.hl.blockchain.rest.WalletResponse
 import org.springframework.context.MessageSource
-import java.util.Calendar
+import java.util.LinkedList
 import java.util.Locale
 
 
@@ -55,16 +55,15 @@ fun buildValidTransactionResponse(amount: Long) = Transaction(
     VALID_PUBLIC_KEY
 )
 
-fun buildValidBlockchainResponse() = mutableListOf(
-    BlockResponse(
-        "1",
-        null,
-        Transaction(
-            1,
-            VALID_PUBLIC_KEY,
-            VALID_PUBLIC_KEY
-        ),
-        "${Calendar.getInstance().timeInMillis}"
+fun buildValidBlockchainResponse() = LinkedList(
+    listOf(
+        Block(
+            Transaction(
+                1,
+                VALID_PUBLIC_KEY,
+                VALID_PUBLIC_KEY
+            )
+        )
     )
 )
 

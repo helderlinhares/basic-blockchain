@@ -1,6 +1,7 @@
 package me.hl.blockchain.service
 
 import me.hl.blockchain.domain.block.Block
+import me.hl.blockchain.domain.chain.Chain
 import me.hl.blockchain.domain.chain.ChainService
 import me.hl.blockchain.domain.transaction.Transaction
 import org.assertj.core.api.Assertions.assertThat
@@ -28,7 +29,6 @@ class ChainServiceTest {
     @Test
     fun `Should add block on chain`() {
         val newBlock = Block(
-            chainService.getLastBlockHash(),
             Transaction(
                 2L,
                 "senderTwo",
@@ -56,7 +56,6 @@ class ChainServiceTest {
         val finalBalance = originalBalance + positiveAmount
 
         val newPositiveAmountBlock = Block(
-            chainService.getLastBlockHash(),
             Transaction(
                 positiveAmount,
                 "senderOne",
@@ -75,7 +74,6 @@ class ChainServiceTest {
         val negativeAmount = -chainService.chain.GENESIS_AMOUNT
         val finalBalance = originalBalance + negativeAmount
         val newNegativeAmountBlock = Block(
-            chainService.getLastBlockHash(),
             Transaction(
                 negativeAmount,
                 chainService.chain.GENESIS_RECEIVER_KEY,
@@ -91,9 +89,8 @@ class ChainServiceTest {
     @Test
     fun `Should return genesis block When getting chain blocks`() {
         chainService.getChainBlocks().also{
-            assertThat(it[0]).hasFieldOrPropertyWithValue("previousBlockHash", null)
-            assertThat(it[0]).hasFieldOrProperty("transaction")
-            assertThat(it[0]).hasFieldOrProperty("time")
+            assertThat(it[0].transaction)
+                .hasFieldOrPropertyWithValue("senderPublicKey", Chain.GENESIS_SENDER_KEY)
         }
     }
 

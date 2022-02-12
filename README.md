@@ -60,14 +60,15 @@ OBS: You can also use your IDE to run the Project.
   ```json
   [
     {
-        "id": "38376a1e580e16db898a794ea0ad6f2f00247e504b9536bb5b66ce2e26ebe5d8",
-        "previousBlockHash": null,
+        "previousId": 0,
+        "id": 1,
         "transaction": {
             "amount": 1,
             "senderPublicKey": "GENESIS",
             "receiverPublicKey": "helderlinhares"
         },
-        "time": "1636316462920"
+        "time": 1644687088177,
+        "hash": "bd92fdaadc60eb9c9f6b02d244b1875a9048a2a3113ead93b1fd5796d2ef3772"
     }
   ]
   ```

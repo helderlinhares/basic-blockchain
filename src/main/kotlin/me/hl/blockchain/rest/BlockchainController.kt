@@ -1,5 +1,6 @@
 package me.hl.blockchain.rest
 
+import me.hl.blockchain.domain.block.Block
 import me.hl.blockchain.domain.chain.ChainService
 import me.hl.blockchain.domain.transaction.TransactionService
 import me.hl.blockchain.domain.wallet.WalletService
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestHeader
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.ResponseStatus
 import org.springframework.web.bind.annotation.RestController
+import java.util.LinkedList
 
 @RestController
 @RequestMapping("/blockchain", produces = [MediaType.APPLICATION_JSON_VALUE])
@@ -45,5 +47,17 @@ class BlockchainController(
     ) = transactionService.sendCoin(coins, privateKey.toPrivateKey(), receiverPublicKey.toPublicKey())
 
     @GetMapping(produces = [MediaType.APPLICATION_JSON_VALUE])
-    fun listBlockChain() = chainService.getChainBlocks()
+    fun listBlockChain() = chainService.getChainBlocks().toResponse()
+
+    private fun LinkedList<Block>.toResponse(): ArrayList<BlockResponse?> {
+        val li = this.listIterator()
+        val blockChainResponse = ArrayList<BlockResponse?>(this.size)
+        while (li.hasNext()) {
+            val node = li.next()
+            blockChainResponse.add(
+                BlockResponse(li.previousIndex(), li.nextIndex(), node.transaction, node.time, node.hash())
+            )
+        }
+        return blockChainResponse
+    }
 }
